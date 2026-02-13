@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Reserva</title>
+    <meta charset="UTF-8">
+    <style>
+        div {
+            margin: 0.5%
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <form method="post">
+        <fieldset>
+            <legend>Solicitação de Reserva</legend>
+            <div>
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" name="nome" size="50" required>
+            </div>
+            <div>
+                <label for="celular">Celular</label>
+                <input type="tel" id="celular" name="celular" placeholder="99 99999-9999"
+                    pattern="[0-9]{2} [0-9]{5}-[0-9]{4}" required>
+            </div>
+            <div>
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" name="cidade" size="38" required>
+            </div>
+            <div>
+                <label for="chegada">Chegada</label>
+                <input type="date" id="chegada" name="chegada">
+            </div>
+            <div>
+                <label for="partida">Partida</label>
+                <input type="date" id="partida" name="partida">
+                <input type="button" value="Calcular Diárias" id="btn-calcular-diarias">
+                <span id="span-diarias"></span>
+            </div>
+            <div>
+                <label for="adultos">Adultos</label>
+                <input type="number" id="adultos" name="adultos" min="1" max="6" value="2">
+            </div>
+            <div>
+                <label for="criancas">Crianças</label>
+                <input type="number" id="criancas" name="criancas" min="0" max="5" value="0">
+                <label for="criancas_menores">Até 5 anos</label>
+                <input type="number" id="criancas_menores" name="criancas_menores" min="0" max="0" value="0">
+            </div>
+            <div>
+                <input type="submit" value="Solicitar Reserva"
+                    onclick="alert('Obrigado! Em breve, entraremos em contato para confirmação de sua reserva.')">
+            </div>
+        </fieldset>
+    </form>
+    <script type="module" src="js/a.js"></script>
+    <script type="module" src="js/b.js"></script>
+</body>
+
+</html>
