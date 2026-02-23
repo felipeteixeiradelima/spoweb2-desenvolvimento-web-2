@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Meu site</title>
+    </head>
+
+    <body>
+        <h1>Título</h1>
+        <p>Parágrafo normal.</p>
+        <p id="p-1">Parágrafo alterado pelo item a).</p>
+        <p id="p-2">Parágrafo alterado pelo item b).</p>
+        <p id="p-3">Parágrafo alterado pelo item c).</p>
+        <div>
+            <fieldset>
+                <legend>Item d) Triângulo retângulo</legend>
+                <form id="form-d-triangulo" action="#">
+                    <div>
+                        <label for="cateto-a-ex-d">Cateto A:</label>
+                        <input
+                            type="number"
+                            name="cateto-a-ex-d"
+                            id="cateto-a-ex-d"
+                            min="1"
+                            value="1"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label for="cateto-b-ex-d">Cateto B:</label>
+                        <input
+                            type="number"
+                            name="cateto-b-ex-d"
+                            id="cateto-b-ex-d"
+                            min="1"
+                            value="1"
+                            required
+                        />
+                    </div>
+                    <button type="submit">Calcular lado da hipotenusa</button>
+                    <div hidden id="div-resultado-triangulo">
+                        <p></p>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+        <div>
+            <fieldset>
+                <legend>Item e) Triângulo retângulo</legend>
+                <form id="form-e-triangulo" action="#">
+                    <div>
+                        <label for="cateto-a-ex-e">Cateto A:</label>
+                        <input
+                            type="number"
+                            name="cateto-a-ex-e"
+                            id="cateto-a-ex-e"
+                            min="1"
+                            value="1"
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label for="cateto-b-ex-e">Cateto B:</label>
+                        <input
+                            type="number"
+                            name="cateto-b-ex-e"
+                            id="cateto-b-ex-e"
+                            min="1"
+                            value="1"
+                            required
+                        />
+                    </div>
+                    <button type="submit">Calcular lado da hipotenusa</button>
+                    <div hidden id="div-resultado-triangulo">
+                        <p></p>
+                    </div>
+                </form>
+            </fieldset>
+        </div>
+    </body>
+
+    <script type="module" src="js/settings.js"></script>
+    <script type="module" src="js/functions.js"></script>
+    <script type="module" src="js/main.js"></script>
+</html>
