@@ -24,13 +24,15 @@ var alterarTamanhoFonteES6Arrow = (idElemento, tamanho) =>
 var calcularHipotenusa = function (valorCatetoA, valorCatetoB) {
     const hipotenusa = Math.sqrt(valorCatetoA ** 2 + valorCatetoB ** 2);
     return hipotenusa;
-}
+};
 
 function imprimirHipotenusaNaTela(funcaoCalculaHipotenusa) {
     const valorCatetoA = document.getElementById(ID_INPUT_CATETO_A_EX_D).value;
     const valorCatetoB = document.getElementById(ID_INPUT_CATETO_B_EX_D).value;
 
-    const elementoDivResultado = document.getElementById(ID_DIV_RESULTADO_TRIANGULO_EX_D);
+    const elementoDivResultado = document.getElementById(
+        ID_DIV_RESULTADO_TRIANGULO_EX_D
+    );
     const elementoPResultado = elementoDivResultado.children[0];
 
     const hipotenusa = funcaoCalculaHipotenusa(valorCatetoA, valorCatetoB);
@@ -46,13 +48,80 @@ var imprimirHipotenusaNaTelaDinamico = new Function(
     "idCatetoB",
     "idDivResultado",
     "const valorCatetoA = document.getElementById(idCatetoA).value;" +
-    "const valorCatetoB = document.getElementById(idCatetoB).value;" +
-    "const elementoDivResultado = document.getElementById(idDivResultado);" +
-    "const elementoPResultado = elementoDivResultado.children[0];" +
-    "const hipotenusa = funcaoCalculaHipotenusa(valorCatetoA, valorCatetoB);" +
-    "elementoDivResultado.hidden = false;" +
-    "elementoPResultado.innerHTML = `A hipotenusa desse triângulo mede ${hipotenusa}`;"
-)
+        "const valorCatetoB = document.getElementById(idCatetoB).value;" +
+        "const elementoDivResultado = document.getElementById(idDivResultado);" +
+        "const elementoPResultado = elementoDivResultado.children[0];" +
+        "const hipotenusa = funcaoCalculaHipotenusa(valorCatetoA, valorCatetoB);" +
+        "elementoDivResultado.hidden = false;" +
+        "elementoPResultado.innerHTML = `A hipotenusa desse triângulo mede ${hipotenusa}`;"
+);
+
+// f) a função autoinvocada está dentro dessa função
+function raizNumeroES5(idElemento, radicando, indice) {
+    const elementoP = document.getElementById(idElemento);
+
+    // Função autoinvocada
+    let resultado = (function (radicando, indice) {
+        return radicando ** (1 / indice);
+    })(radicando, indice);
+
+    elementoP.innerHTML = `Item f): o resultado de <sup>${indice}</sup> √(${radicando}) vale ${resultado}`;
+}
+
+// g) a função autoinvocada está dentro dessa função
+function raizNumeroES6(idElemento, radicando, indice) {
+    const elementoP = document.getElementById(idElemento);
+
+    // Função autoinvocada
+    let resultado = ((radicando, indice) => radicando ** (1 / indice))(
+        radicando,
+        indice
+    );
+
+    elementoP.innerHTML = `Item g): o resultado de <sup>${indice}</sup> √(${radicando}) vale ${resultado}`;
+}
+
+// h)
+async function obterCotacao(codigoMoedas) {
+    const url = `https://economia.awesomeapi.com.br/last/${codigoMoedas}`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const cotacao = parseFloat(
+            eval(`data.${codigoMoedas.replace("-", "")}.bid`)
+        );
+        return cotacao;
+    } catch (error) {
+        console.error("Erro ao buscar cotação", codigoMoedas, ":", error);
+    }
+}
+
+function realParaDolarEuro(valorReais) {
+    let cotacaoRealParaDolar, cotacaoRealParaEuro;
+
+    obterCotacao("BRL-USD").then((valor) => {
+        cotacaoRealParaDolar = valor;
+    });
+    obterCotacao("BRL-EUR").then((valor) => {
+        cotacaoRealParaEuro = valor;
+    });
+
+    const valorDolar = valorReais * cotacaoRealParaDolar;
+    const valorEuro = valorReais * cotacaoRealParaEuro;
+
+    return [valorDolar, valorEuro];
+}
+
+function itemH(idElemento, valorReais) {
+    const elemento = document.getElementById(idElemento);
+    const valores = realParaDolarEuro(valorReais);
+
+    const valorDolares = valores[0],
+        valorEuros = valores[1];
+
+    elemento.innerHTML = `Item h): o valor de R$${valorReais} equivale a US$${valorDolares} e €${valorEuros}`;
+}
 
 /* ======================================================= */
 export {
@@ -62,4 +131,7 @@ export {
     calcularHipotenusa,
     imprimirHipotenusaNaTela,
     imprimirHipotenusaNaTelaDinamico,
+    raizNumeroES5,
+    raizNumeroES6,
+    itemH,
 };
