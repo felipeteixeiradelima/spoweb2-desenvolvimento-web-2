@@ -31,7 +31,7 @@ function imprimirHipotenusaNaTela(funcaoCalculaHipotenusa) {
     const valorCatetoB = document.getElementById(ID_INPUT_CATETO_B_EX_D).value;
 
     const elementoDivResultado = document.getElementById(
-        ID_DIV_RESULTADO_TRIANGULO_EX_D
+        ID_DIV_RESULTADO_TRIANGULO_EX_D,
     );
     const elementoPResultado = elementoDivResultado.children[0];
 
@@ -53,7 +53,7 @@ var imprimirHipotenusaNaTelaDinamico = new Function(
         "const elementoPResultado = elementoDivResultado.children[0];" +
         "const hipotenusa = funcaoCalculaHipotenusa(valorCatetoA, valorCatetoB);" +
         "elementoDivResultado.hidden = false;" +
-        "elementoPResultado.innerHTML = `A hipotenusa desse triângulo mede ${hipotenusa}`;"
+        "elementoPResultado.innerHTML = `A hipotenusa desse triângulo mede ${hipotenusa}`;",
 );
 
 // f) a função autoinvocada está dentro dessa função
@@ -75,7 +75,7 @@ function raizNumeroES6(idElemento, radicando, indice) {
     // Função autoinvocada
     let resultado = ((radicando, indice) => radicando ** (1 / indice))(
         radicando,
-        indice
+        indice,
     );
 
     elementoP.innerHTML = `Item g): o resultado de <sup>${indice}</sup> √(${radicando}) vale ${resultado}`;
@@ -89,7 +89,7 @@ async function obterCotacao(codigoMoedas) {
         const response = await fetch(url);
         const data = await response.json();
         const cotacao = parseFloat(
-            eval(`data.${codigoMoedas.replace("-", "")}.bid`)
+            eval(`data.${codigoMoedas.replace("-", "")}.bid`),
         );
         return cotacao;
     } catch (error) {
@@ -97,8 +97,8 @@ async function obterCotacao(codigoMoedas) {
     }
 }
 
-function realParaDolarEuro(valorReais) {
-    let cotacaoRealParaDolar, cotacaoRealParaEuro;
+function realParaDolarEuroArrayIndexado(valorReais) {
+    var cotacaoRealParaDolar, cotacaoRealParaEuro;
 
     obterCotacao("BRL-USD").then((valor) => {
         cotacaoRealParaDolar = valor;
@@ -115,12 +115,40 @@ function realParaDolarEuro(valorReais) {
 
 function itemH(idElemento, valorReais) {
     const elemento = document.getElementById(idElemento);
-    const valores = realParaDolarEuro(valorReais);
+    const valores = realParaDolarEuroArrayIndexado(valorReais);
 
     const valorDolares = valores[0],
         valorEuros = valores[1];
 
     elemento.innerHTML = `Item h): o valor de R$${valorReais} equivale a US$${valorDolares} e €${valorEuros}`;
+}
+
+// i)
+
+function realParaDolarEuroArrayAssossiativo(valorReais) {
+    let cotacaoRealParaDolar, cotacaoRealParaEuro;
+
+    obterCotacao("BRL-USD").then((valor) => {
+        cotacaoRealParaDolar = valor;
+    });
+    obterCotacao("BRL-EUR").then((valor) => {
+        cotacaoRealParaEuro = valor;
+    });
+
+    const valorDolar = valorReais * cotacaoRealParaDolar;
+    const valorEuro = valorReais * cotacaoRealParaEuro;
+
+    return { valorDolar, valorEuro };
+}
+
+function itemI(idElemento, valorReais) {
+    const elemento = document.getElementById(idElemento);
+    const valores = realParaDolarEuroArrayAssossiativo(valorReais);
+
+    const valorDolares = valores.valorDolar,
+        valorEuros = valores.valorEuro;
+
+    elemento.innerHTML = `Item i): o valor de R$${valorReais} equivale a US$${valorDolares} e €${valorEuros}`;
 }
 
 /* ======================================================= */
@@ -134,4 +162,5 @@ export {
     raizNumeroES5,
     raizNumeroES6,
     itemH,
+    itemI,
 };

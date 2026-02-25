@@ -6,6 +6,7 @@ const ID_PARAGRAFO_3 = "p-3";
 const ID_PARAGRAFO_4 = "p-4";
 const ID_PARAGRAFO_5 = "p-5";
 const ID_PARAGRAFO_6 = "p-6";
+const ID_PARAGRAFO_7 = "p-7";
 
 const ID_INPUT_CATETO_A_EX_D = "cateto-a-ex-d";
 const ID_INPUT_CATETO_B_EX_D = "cateto-b-ex-d";
@@ -25,6 +26,7 @@ export {
     ID_PARAGRAFO_4,
     ID_PARAGRAFO_5,
     ID_PARAGRAFO_6,
+    ID_PARAGRAFO_7,
     ID_INPUT_CATETO_A_EX_D,
     ID_INPUT_CATETO_B_EX_D,
     ID_INPUT_CATETO_A_EX_E,

@@ -8,6 +8,7 @@ import {
     raizNumeroES5,
     raizNumeroES6,
     itemH,
+    itemI,
 } from "./functions.js";
 
 import {
@@ -17,6 +18,7 @@ import {
     ID_PARAGRAFO_4,
     ID_PARAGRAFO_5,
     ID_PARAGRAFO_6,
+    ID_PARAGRAFO_7,
     ID_FORM_TRIANGULO_EX_D,
     ID_FORM_TRIANGULO_EX_E,
     ID_INPUT_CATETO_A_EX_E,
@@ -50,7 +52,7 @@ document
             calcularHipotenusa,
             ID_INPUT_CATETO_A_EX_E,
             ID_INPUT_CATETO_B_EX_E,
-            ID_DIV_RESULTADO_TRIANGULO_EX_E
+            ID_DIV_RESULTADO_TRIANGULO_EX_E,
         );
     });
 
@@ -62,3 +64,6 @@ raizNumeroES6(ID_PARAGRAFO_5, 27, 3);
 
 // h)
 itemH(ID_PARAGRAFO_6, 420.69);
+
+// i)
+itemI(ID_PARAGRAFO_7, 69.42);
