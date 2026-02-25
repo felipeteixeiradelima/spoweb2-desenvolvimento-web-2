@@ -31,7 +31,7 @@ function imprimirHipotenusaNaTela(funcaoCalculaHipotenusa) {
     const valorCatetoB = document.getElementById(ID_INPUT_CATETO_B_EX_D).value;
 
     const elementoDivResultado = document.getElementById(
-        ID_DIV_RESULTADO_TRIANGULO_EX_D,
+        ID_DIV_RESULTADO_TRIANGULO_EX_D
     );
     const elementoPResultado = elementoDivResultado.children[0];
 
@@ -53,7 +53,7 @@ var imprimirHipotenusaNaTelaDinamico = new Function(
         "const elementoPResultado = elementoDivResultado.children[0];" +
         "const hipotenusa = funcaoCalculaHipotenusa(valorCatetoA, valorCatetoB);" +
         "elementoDivResultado.hidden = false;" +
-        "elementoPResultado.innerHTML = `A hipotenusa desse triângulo mede ${hipotenusa}`;",
+        "elementoPResultado.innerHTML = `A hipotenusa desse triângulo mede ${hipotenusa}`;"
 );
 
 // f) a função autoinvocada está dentro dessa função
@@ -75,7 +75,7 @@ function raizNumeroES6(idElemento, radicando, indice) {
     // Função autoinvocada
     let resultado = ((radicando, indice) => radicando ** (1 / indice))(
         radicando,
-        indice,
+        indice
     );
 
     elementoP.innerHTML = `Item g): o resultado de <sup>${indice}</sup> √(${radicando}) vale ${resultado}`;
@@ -89,7 +89,7 @@ async function obterCotacao(codigoMoedas) {
         const response = await fetch(url);
         const data = await response.json();
         const cotacao = parseFloat(
-            eval(`data.${codigoMoedas.replace("-", "")}.bid`),
+            eval(`data.${codigoMoedas.replace("-", "")}.bid`)
         );
         return cotacao;
     } catch (error) {
@@ -139,6 +139,32 @@ async function itemI(idElemento, valorReais) {
     elemento.innerHTML = `Item i): o valor de R$${valorReais} equivale a US$${valorDolares} e €${valorEuros}`;
 }
 
+// j)
+function itemJ() {
+    let mensagem = "Quem canta ";
+
+    function closureCompletaFrase() {
+        mensagem = mensagem.concat("seus males espanta.");
+    }
+
+    closureCompletaFrase();
+
+    alert(mensagem);
+}
+
+// k)
+import { converterParaMaiusculas, converterParaMinusculas } from "./itemk.js";
+
+function itemK(idElementoInputTexto, isMaiusculas) {
+    const elementoTexto = document.getElementById(idElementoInputTexto);
+
+    if (isMaiusculas) {
+        converterParaMaiusculas(elementoTexto.value);
+    } else {
+        converterParaMinusculas(elementoTexto.value);
+    }
+}
+
 /* ======================================================= */
 export {
     alterarFamiliaFonte,
@@ -151,4 +177,6 @@ export {
     raizNumeroES6,
     itemH,
     itemI,
+    itemJ,
+    itemK,
 };

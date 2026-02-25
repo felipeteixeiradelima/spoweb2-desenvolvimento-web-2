@@ -9,6 +9,8 @@ import {
     raizNumeroES6,
     itemH,
     itemI,
+    itemJ,
+    itemK,
 } from "./functions.js";
 
 import {
@@ -23,7 +25,11 @@ import {
     ID_FORM_TRIANGULO_EX_E,
     ID_INPUT_CATETO_A_EX_E,
     ID_INPUT_CATETO_B_EX_E,
+    ID_INPUT_K,
     ID_DIV_RESULTADO_TRIANGULO_EX_E,
+    ID_BTN_ITEM_J,
+    ID_BTN_ITEM_K_MAISUCULAS,
+    ID_BTN_ITEM_K_MINUSCULAS,
 } from "./settings.js";
 
 // a)
@@ -52,7 +58,7 @@ document
             calcularHipotenusa,
             ID_INPUT_CATETO_A_EX_E,
             ID_INPUT_CATETO_B_EX_E,
-            ID_DIV_RESULTADO_TRIANGULO_EX_E,
+            ID_DIV_RESULTADO_TRIANGULO_EX_E
         );
     });
 
@@ -67,3 +73,19 @@ itemH(ID_PARAGRAFO_6, 420.69);
 
 // i)
 itemI(ID_PARAGRAFO_7, 69.42);
+
+// j)
+document.getElementById(ID_BTN_ITEM_J).addEventListener("click", itemJ);
+
+// k)
+document
+    .getElementById(ID_BTN_ITEM_K_MAISUCULAS)
+    .addEventListener("click", () => {
+        itemK(ID_INPUT_K, true);
+    });
+
+document
+    .getElementById(ID_BTN_ITEM_K_MINUSCULAS)
+    .addEventListener("click", () => {
+        itemK(ID_INPUT_K, false);
+    });
