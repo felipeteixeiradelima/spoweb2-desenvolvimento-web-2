@@ -165,6 +165,18 @@ function itemK(idElementoInputTexto, isMaiusculas) {
     }
 }
 
+// função geral
+function item(letra, ...args) {
+    switch (letra) {
+        case "a":
+            
+            break;
+    
+        default:
+            break;
+    }
+}
+
 /* ======================================================= */
 export {
     alterarFamiliaFonte,
