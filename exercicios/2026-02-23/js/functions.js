@@ -97,15 +97,9 @@ async function obterCotacao(codigoMoedas) {
     }
 }
 
-function realParaDolarEuroArrayIndexado(valorReais) {
-    var cotacaoRealParaDolar, cotacaoRealParaEuro;
-
-    obterCotacao("BRL-USD").then((valor) => {
-        cotacaoRealParaDolar = valor;
-    });
-    obterCotacao("BRL-EUR").then((valor) => {
-        cotacaoRealParaEuro = valor;
-    });
+async function realParaDolarEuroArrayIndexado(valorReais) {
+    const cotacaoRealParaDolar = await obterCotacao("BRL-USD");
+    const cotacaoRealParaEuro = await obterCotacao("BRL-EUR");
 
     const valorDolar = valorReais * cotacaoRealParaDolar;
     const valorEuro = valorReais * cotacaoRealParaEuro;
@@ -113,27 +107,21 @@ function realParaDolarEuroArrayIndexado(valorReais) {
     return [valorDolar, valorEuro];
 }
 
-function itemH(idElemento, valorReais) {
+async function itemH(idElemento, valorReais) {
     const elemento = document.getElementById(idElemento);
-    const valores = realParaDolarEuroArrayIndexado(valorReais);
+    const valores = await realParaDolarEuroArrayIndexado(valorReais);
 
-    const valorDolares = valores[0],
-        valorEuros = valores[1];
+    const valorDolares = valores[0].toFixed(2),
+        valorEuros = valores[1].toFixed(2);
 
     elemento.innerHTML = `Item h): o valor de R$${valorReais} equivale a US$${valorDolares} e €${valorEuros}`;
 }
 
 // i)
 
-function realParaDolarEuroArrayAssossiativo(valorReais) {
-    let cotacaoRealParaDolar, cotacaoRealParaEuro;
-
-    obterCotacao("BRL-USD").then((valor) => {
-        cotacaoRealParaDolar = valor;
-    });
-    obterCotacao("BRL-EUR").then((valor) => {
-        cotacaoRealParaEuro = valor;
-    });
+async function realParaDolarEuroArrayAssossiativo(valorReais) {
+    const cotacaoRealParaDolar = await obterCotacao("BRL-USD");
+    const cotacaoRealParaEuro = await obterCotacao("BRL-EUR");
 
     const valorDolar = valorReais * cotacaoRealParaDolar;
     const valorEuro = valorReais * cotacaoRealParaEuro;
@@ -141,12 +129,12 @@ function realParaDolarEuroArrayAssossiativo(valorReais) {
     return { valorDolar, valorEuro };
 }
 
-function itemI(idElemento, valorReais) {
+async function itemI(idElemento, valorReais) {
     const elemento = document.getElementById(idElemento);
-    const valores = realParaDolarEuroArrayAssossiativo(valorReais);
+    const valores = await realParaDolarEuroArrayAssossiativo(valorReais);
 
-    const valorDolares = valores.valorDolar,
-        valorEuros = valores.valorEuro;
+    const valorDolares = valores.valorDolar.toFixed(2),
+        valorEuros = valores.valorEuro.toFixed(2);
 
     elemento.innerHTML = `Item i): o valor de R$${valorReais} equivale a US$${valorDolares} e €${valorEuros}`;
 }
