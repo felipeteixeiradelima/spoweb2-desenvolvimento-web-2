@@ -1,3 +1,140 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: "Times New Roman", Times, serif;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #e6f2ff; /* azul claro */
+    color: #333;
+    padding: 40px;
+}
+
+/* Título da página */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    color: #1a73e8;
+}
+
+/* Container dos cards */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Card */
+.card {
+    background-color: #ffffff;
+    width: 320px;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #1a73e8;
+}
+
+/* Botões */
+.card-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+/* Botão Executar */
+.btn-executar {
+    background-color: #4da6ff;
+    color: white;
+}
+
+.btn-executar:hover {
+    background-color: #1a8cff;
+    transform: scale(1.03);
+}
+
+/* Botão Resetar */
+.btn-resetar {
+    background-color: #cce6ff;
+    color: #1a73e8;
+}
+
+.btn-resetar:hover {
+    background-color: #99ccff;
+    transform: scale(1.03);
+}
+
+/* Área de resultado */
+.resultado {
+    min-height: 40px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #f5fbff;
+    font-size: 14px;
+}
+/* Área de inputs dentro do card */
+.card-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+/* Grupo label + input */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+.input-group label {
+    margin-bottom: 4px;
+    color: #1a73e8;
+    font-weight: 500;
+}
+
+/* Campo de texto */
+input[type="text"] {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #cce6ff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-size: 14px;
+}
+
+/* Efeito ao focar */
+input[type="text"]:focus {
+    border-color: #4da6ff;
+    box-shadow: 0 0 0 3px rgba(77, 166, 255, 0.2);
 }

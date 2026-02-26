@@ -1,32 +1,74 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Exercícios 2</title>
+        <title>Lista de Exercícios - Aula 2</title>
         <link rel="stylesheet" href="styles.css" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-            crossorigin="anonymous"
-        />
     </head>
     <body>
-        <section>
-            <div>
-                <h1>Item [letra])</h1>
+        <header>
+            <h1>Lista de Exercícios - Aula 2</h1>
+        </header>
+
+        <main class="container">
+            <div class="card">
+                <h2>Exercício A - Mudança de Família da Fonte</h2>
+
+                <div class="card-inputs">
+                    <div class="input-group">
+                        <label for="input1ExA">Família</label>
+                        <input
+                            type="text"
+                            id="input1ExA"
+                            placeholder="Digite uma família de fontes"
+                        />
+                    </div>
+                </div>
+
+                <div class="card-buttons">
+                    <button class="btn-executar" onclick="executarItemA()">
+                        Executar
+                    </button>
+                    <button class="btn-resetar" onclick="resetarItemA()">
+                        Resetar
+                    </button>
+                </div>
+
+                <div class="resultado" id="resultadoExA">
+                    <p>O resultado será aplicado neste texto.</p>
+                </div>
             </div>
-            <div>conteudo</div>
-            <div>
-                <button type="button">Executar</button>
-                <button type="button">Resetar</button>
+
+            <div class="card">
+                <h2>Exercício B - Mudança de Tamanho da Fonte</h2>
+
+                <div class="card-inputs">
+                    <div class="input-group">
+                        <label for="input1ExB">Tamanho</label>
+                        <input
+                            type="number"
+                            id="input1ExB"
+                            placeholder="Digite um tamanho em píxels"
+                            min="0"
+                        />
+                    </div>
+                </div>
+
+                <div class="card-buttons">
+                    <button class="btn-executar" onclick="executarItemB()">
+                        Executar
+                    </button>
+                    <button class="btn-resetar" onclick="resetarItemB()">
+                        Resetar
+                    </button>
+                </div>
+
+                <div class="resultado" id="resultadoExB">
+                    <p>O resultado será aplicado neste texto.</p>
+                </div>
             </div>
-        </section>
+        </main>
+
+        <script src="js/main2.js"></script>
     </body>
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"
-    ></script>
 </html>
