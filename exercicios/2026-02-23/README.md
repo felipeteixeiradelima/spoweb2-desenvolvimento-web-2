@@ -8,7 +8,10 @@
 
 **Para executar o exercício, por favor, utilize a extensão Live Server do Visual Studio Code, ou qualquer servidor local (http).**
 
+Caso tente executar o arquivo HTML diretamente via navegador (Chrome, Edge, Firefox), os módulos JS serão bloqueados.
+
 # Observação
 
 O documento HTML e CSS foram feitos com auxílio de ChatGPT visando uma entrega mais amigável e intuitiva, considerando que estes elementos não fazem parte do critério de avaliação.
+
 **Os módulos JS foram desenvolvidos de maneira autônoma, utilizando-se somente de documentações disponíveis na internet.**
