@@ -1,99 +1,306 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!-- !!! HTML FEITO COM AUXÍLIO DE CHATGPT !!! -->
+
+<!doctype html>
+<html lang="pt-BR">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Meu site</title>
+        <title>Lista de Exercícios - Aula 2</title>
+        <link rel="stylesheet" href="styles.css" />
     </head>
-
     <body>
-        <h1>Título</h1>
-        <p>Parágrafo normal.</p>
-        <p id="p-1">Parágrafo alterado pelo item a).</p>
-        <p id="p-2">Parágrafo alterado pelo item b).</p>
-        <p id="p-3">Parágrafo alterado pelo item c).</p>
-        <div>
-            <fieldset>
-                <legend>Item d) Triângulo retângulo</legend>
-                <form id="form-d-triangulo" action="#">
-                    <div>
-                        <label for="cateto-a-ex-d">Cateto A:</label>
-                        <input
-                            type="number"
-                            name="cateto-a-ex-d"
-                            id="cateto-a-ex-d"
-                            min="1"
-                            value="1"
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label for="cateto-b-ex-d">Cateto B:</label>
-                        <input
-                            type="number"
-                            name="cateto-b-ex-d"
-                            id="cateto-b-ex-d"
-                            min="1"
-                            value="1"
-                            required
-                        />
-                    </div>
-                    <button type="submit">Calcular lado da hipotenusa</button>
-                    <div hidden id="div-resultado-triangulo-d">
-                        <p></p>
-                    </div>
-                </form>
-            </fieldset>
-        </div>
-        <div>
-            <fieldset>
-                <legend>Item e) Triângulo retângulo</legend>
-                <form id="form-e-triangulo" action="#">
-                    <div>
-                        <label for="cateto-a-ex-e">Cateto A:</label>
-                        <input
-                            type="number"
-                            name="cateto-a-ex-e"
-                            id="cateto-a-ex-e"
-                            min="1"
-                            value="1"
-                            required
-                        />
-                    </div>
-                    <div>
-                        <label for="cateto-b-ex-e">Cateto B:</label>
-                        <input
-                            type="number"
-                            name="cateto-b-ex-e"
-                            id="cateto-b-ex-e"
-                            min="1"
-                            value="1"
-                            required
-                        />
-                    </div>
-                    <button type="submit">Calcular lado da hipotenusa</button>
-                    <div hidden id="div-resultado-triangulo-e">
-                        <p></p>
-                    </div>
-                </form>
-            </fieldset>
-        </div>
-        <p id="p-4">Parágrafo alterado pelo item f).</p>
-        <p id="p-5">Parágrafo alterado pelo item g).</p>
-        <p id="p-6">Parágrafo alterado pelo item h).</p>
-        <p id="p-7">Parágrafo alterado pelo item i).</p>
-        <button id="btn-j" type="button">Item j)</button>
-        <div>
-            <p>Item k)</p>
-            <label for="inpt-k">Digite um texto:</label>
-            <input type="text" name="inpt-k" id="inpt-k" />
-            <button id="btn-k-maiusculas" type="button">Maiúsculas</button>
-            <button id="btn-k-minusculas" type="button">Minúsculas</button>
-        </div>
-    </body>
+        <header>
+            <h1>Lista de Exercícios - Aula 2</h1>
+        </header>
 
-    <script type="module" src="js/settings.js"></script>
-    <script type="module" src="js/functions.js"></script>
-    <script type="module" src="js/itemk.js"></script>
-    <script type="module" src="js/main.js"></script>
+        <main class="container">
+            <div class="card">
+                <h2>A) - Muda Família da Fonte (Função Declarada)</h2>
+
+                <div class="card-inputs">
+                    <div class="input-group">
+                        <label for="input1ExA">Família</label>
+                        <input
+                            type="text"
+                            id="input1ExA"
+                            placeholder="Digite uma família de fontes"
+                        />
+                    </div>
+                </div>
+
+                <div class="card-buttons">
+                    <button class="btn-executar" id="btnExecutarExA">Executar</button>
+                    <button class="btn-resetar" id="btnResetarExA">Resetar</button>
+                </div>
+
+                <div class="resultado" id="resultadoExA">
+                    <p>O resultado será aplicado neste texto.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>B) - Muda Tamanho da Fonte (Função Anônima)</h2>
+
+                <div class="card-inputs">
+                    <div class="input-group">
+                        <label for="input1ExB">Tamanho</label>
+                        <input
+                            type="number"
+                            id="input1ExB"
+                            placeholder="Digite um tamanho em píxels"
+                            min="0"
+                        />
+                    </div>
+                </div>
+
+                <div class="card-buttons">
+                    <button class="btn-executar" id="btnExecutarExB">Executar</button>
+                    <button class="btn-resetar" id="btnResetarExB">Resetar</button>
+                </div>
+
+                <div class="resultado" id="resultadoExB">
+                    <p>O resultado será aplicado neste texto.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>C) - Muda Tamanho da Fonte (Arrow Function)</h2>
+
+                <div class="card-inputs">
+                    <div class="input-group">
+                        <label for="input1ExC">Tamanho</label>
+                        <input
+                            type="number"
+                            id="input1ExC"
+                            placeholder="Digite um tamanho em píxels"
+                            min="0"
+                        />
+                    </div>
+                </div>
+
+                <div class="card-buttons">
+                    <button class="btn-executar" id="btnExecutarExC">Executar</button>
+                    <button class="btn-resetar" id="btnResetarExC">Resetar</button>
+                </div>
+
+                <div class="resultado" id="resultadoExC">
+                    <p>O resultado será aplicado neste texto.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>D) - Calcula Hipotenusa (F. Anônima Como Argumento)</h2>
+
+                <div class="card-inputs">
+                    <div class="input-group">
+                        <label for="input1ExD">Cateto A</label>
+                        <input
+                            type="number"
+                            id="input1ExD"
+                            placeholder="Digite o tamanho do Cateto A"
+                            min="0"
+                        />
+                    </div>
+
+                    <div class="input-group">
+                        <label for="input2ExD">Cateto B</label>
+                        <input
+                            type="number"
+                            id="input2ExD"
+                            placeholder="Digite o tamanho do Cateto B"
+                            min="0"
+                        />
+                    </div>
+                </div>
+
+                <div class="card-buttons">
+                    <button class="btn-executar" id="btnExecutarExD">Executar</button>
+                    <button class="btn-resetar" id="btnResetarExD">Resetar</button>
+                </div>
+
+                <div class="resultado" id="resultadoExD" hidden>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>E) - Calcula Hipotenusa (F. Anônima e Dinâmica Como Argumento)</h2>
+
+                <div class="card-inputs">
+                    <div class="input-group">
+                        <label for="input1ExE">Cateto A</label>
+                        <input
+                            type="number"
+                            id="input1ExE"
+                            placeholder="Digite o tamanho do Cateto A"
+                            min="0"
+                        />
+                    </div>
+
+                    <div class="input-group">
+                        <label for="input2ExE">Cateto B</label>
+                        <input
+                            type="number"
+                            id="input2ExE"
+                            placeholder="Digite o tamanho do Cateto B"
+                            min="0"
+                        />
+                    </div>
+                </div>
+
+                <div class="card-buttons">
+                    <button class="btn-executar" id="btnExecutarExE">Executar</button>
+                    <button class="btn-resetar" id="btnResetarExE">Resetar</button>
+                </div>
+
+                <div class="resultado" id="resultadoExE" hidden>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>F) - Calcula Raiz Quadrada (Função Autoinvocada ES5)</h2>
+
+                <div class="card-inputs">
+                    <div class="input-group">
+                        <label for="input1ExF">Radicando</label>
+                        <input
+                            type="number"
+                            id="input1ExF"
+                            placeholder="Digite o valor do radicando"
+                            min="0"
+                        />
+                    </div>
+
+                    <div class="input-group">
+                        <label for="input2ExF">Índice</label>
+                        <input
+                            type="number"
+                            id="input2ExF"
+                            placeholder="Digite o valor do índice"
+                            min="0"
+                        />
+                    </div>
+                </div>
+
+                <div class="card-buttons">
+                    <button class="btn-executar" id="btnExecutarExF">Executar</button>
+                    <button class="btn-resetar" id="btnResetarExF">Resetar</button>
+                </div>
+
+                <div class="resultado" id="resultadoExF" hidden>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>G) - Calcula Raiz Quadrada (Função Autoinvocada ES6)</h2>
+
+                <div class="card-inputs">
+                    <div class="input-group">
+                        <label for="input1ExG">Radicando</label>
+                        <input
+                            type="number"
+                            id="input1ExG"
+                            placeholder="Digite o valor do radicando"
+                            min="0"
+                        />
+                    </div>
+
+                    <div class="input-group">
+                        <label for="input2ExG">Índice</label>
+                        <input
+                            type="number"
+                            id="input2ExG"
+                            placeholder="Digite o valor do índice"
+                            min="0"
+                        />
+                    </div>
+                </div>
+
+                <div class="card-buttons">
+                    <button class="btn-executar" id="btnExecutarExG">Executar</button>
+                    <button class="btn-resetar" id="btnResetarExG">Resetar</button>
+                </div>
+
+                <div class="resultado" id="resultadoExG" hidden>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>H) - Reais para Dólares/Euros (Retorno de Array Indexado)</h2>
+
+                <div class="card-inputs">
+                    <div class="input-group">
+                        <label for="input1ExH">Valor (Reais)</label>
+                        <div class="input-prefix">
+                            <span class="prefix">R$</span>
+                            <input type="number" id="input1ExH" placeholder="0,00" min="0" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-buttons">
+                    <button class="btn-executar" id="btnExecutarExH">Executar</button>
+                    <button class="btn-resetar" id="btnResetarExH">Resetar</button>
+                </div>
+
+                <div class="resultado" id="resultadoExH" hidden>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>I) - Reais para Dólares/Euros (Retorno de Array Assossiativo)</h2>
+
+                <div class="card-inputs">
+                    <div class="input-group">
+                        <label for="input1ExI">Valor (Reais)</label>
+                        <div class="input-prefix">
+                            <span class="prefix">R$</span>
+                            <input type="number" id="input1ExI" placeholder="0,00" min="0" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-buttons">
+                    <button class="btn-executar" id="btnExecutarExI">Executar</button>
+                    <button class="btn-resetar" id="btnResetarExI">Resetar</button>
+                </div>
+
+                <div class="resultado" id="resultadoExI" hidden>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>J) - Quem Canta, Seus Males Espanta (Closure)</h2>
+
+                <div class="card-buttons">
+                    <button class="btn-executar" id="btnExecutarExJ">Executar</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>K) - Maiúsculas e Minúsculas (Módulos)</h2>
+
+                <div class="card-inputs">
+                    <div class="input-group">
+                        <label for="input1ExK">Texto</label>
+                        <div class="input-prefix">
+                            <input type="text" id="input1ExK" placeholder="Digite um texto" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-buttons">
+                    <button class="btn-executar" id="btnExecutarExKMaiusculas">Maiúsculas</button>
+                    <button class="btn-resetar" id="btnExecutarExKMinusculas">Minúsculas</button>
+                </div>
+            </div>
+        </main>
+
+        <script type="module" src="js/itemk.js"></script>
+        <script type="module" src="js/main.js"></script>
+    </body>
 </html>

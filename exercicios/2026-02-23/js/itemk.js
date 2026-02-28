@@ -1,11 +1,9 @@
 function converterParaMaiusculas(texto) {
-    let textoMaiusculas = texto.toUpperCase();
-    alert(textoMaiusculas);
+    return texto.toUpperCase();
 }
 
 function converterParaMinusculas(texto) {
-    let textoMinusculas = texto.toLowerCase();
-    alert(textoMinusculas);
+    return texto.toLowerCase();
 }
 
 export { converterParaMaiusculas, converterParaMinusculas };
