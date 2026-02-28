@@ -1,4 +1,4 @@
-/* -- IDS DE ELEMENTOS -- */
+/* ===================================== IDS DE ELEMENTOS ===================================== */
 const ID_RESULTADO_TEMPLATE = "resultadoEx[char]";
 const ID_RESULTADO_A = ID_RESULTADO_TEMPLATE.replace("[char]", "A");
 const ID_RESULTADO_B = ID_RESULTADO_TEMPLATE.replace("[char]", "B");
@@ -57,9 +57,9 @@ const ID_BTN_RESETAR_G = ID_BTN_RESETAR_TEMPLATE.replace("[char]", "G");
 const ID_BTN_RESETAR_H = ID_BTN_RESETAR_TEMPLATE.replace("[char]", "H");
 const ID_BTN_RESETAR_I = ID_BTN_RESETAR_TEMPLATE.replace("[char]", "I");
 
-/* -- DEFINIÇÃO DE FUNÇÕES -- */
+/* =================================== DEFINIÇÃO DE FUNÇÕES =================================== */
 
-// Uso geral
+/* ---------- Funções de uso geral ---------- */
 function exibirResultado(idElementoDiv, texto) {
     const elementoResultado = document.getElementById(idElementoDiv);
     if (texto) {
@@ -91,7 +91,10 @@ function configurarItens() {
     configurarItemK();
 }
 
-// a)
+/* ------------------------------------------- */
+
+/* ----------------- Item A) ----------------- */
+
 function alterarFonteFamilia(elemento, familia) {
     elemento.style.fontFamily = familia;
 }
@@ -116,7 +119,10 @@ function configurarItemA() {
     adicionarEventListener(ID_BTN_RESETAR_A, "click", resetarItemA);
 }
 
-// b)
+/* ------------------------------------------- */
+
+/* ----------------- Item B) ----------------- */
+
 var alterarTamanhoFonteES5 = function (elemento, tamanho) {
     elemento.style.fontSize = tamanho;
 };
@@ -143,7 +149,10 @@ function configurarItemB() {
     adicionarEventListener(ID_BTN_RESETAR_B, "click", resetarItemB);
 }
 
-// c)
+/* ------------------------------------------- */
+
+/* ----------------- Item C) ----------------- */
+
 var alterarTamanhoFonteES6Arrow = (elemento, tamanho) => (elemento.style.fontSize = tamanho);
 
 function executarItemC() {
@@ -154,13 +163,13 @@ function executarItemC() {
 
     const elementoResultado = document.getElementById(ID_RESULTADO_C);
 
-    alterarTamanhoFonteES5(elementoResultado, tamanho);
+    alterarTamanhoFonteES6Arrow(elementoResultado, tamanho);
 }
 
 function resetarItemC() {
     const elementoResultado = document.getElementById(ID_RESULTADO_C);
 
-    alterarTamanhoFonteES5(elementoResultado, null);
+    alterarTamanhoFonteES6Arrow(elementoResultado, null);
 }
 
 function configurarItemC() {
@@ -168,7 +177,10 @@ function configurarItemC() {
     adicionarEventListener(ID_BTN_RESETAR_C, "click", resetarItemC);
 }
 
-// d)
+/* ------------------------------------------- */
+
+/* ----------------- Item D) ----------------- */
+
 var calcularHipotenusa = function (valorCatetoA, valorCatetoB) {
     const hipotenusa = Math.sqrt(valorCatetoA ** 2 + valorCatetoB ** 2);
     return hipotenusa;
@@ -204,7 +216,10 @@ function configurarItemD() {
     adicionarEventListener(ID_BTN_RESETAR_D, "click", resetarItemD);
 }
 
-// e)
+/* ------------------------------------------- */
+
+/* ----------------- Item E) ----------------- */
+
 var calcularHipotenusaDinamico = new Function(
     "valorCatetoA",
     "valorCatetoB",
@@ -236,7 +251,10 @@ function configurarItemE() {
     adicionarEventListener(ID_BTN_RESETAR_E, "click", resetarItemE);
 }
 
-// f)
+/* ------------------------------------------- */
+
+/* ----------------- Item F) ----------------- */
+
 function executarItemF() {
     let radicando = document.getElementById(ID_INPUT_1_F).value.trim();
     if (radicando === null || radicando === "") return;
@@ -264,7 +282,10 @@ function configurarItemF() {
     adicionarEventListener(ID_BTN_RESETAR_F, "click", resetarItemF);
 }
 
-// g)
+/* ------------------------------------------- */
+
+/* ----------------- Item G) ----------------- */
+
 function executarItemG() {
     let radicando = document.getElementById(ID_INPUT_1_G).value.trim();
     if (radicando === null || radicando === "") return;
@@ -290,7 +311,10 @@ function configurarItemG() {
     adicionarEventListener(ID_BTN_RESETAR_G, "click", resetarItemG);
 }
 
-// h)
+/* ------------------------------------------- */
+
+/* ----------------- Item H) ----------------- */
+
 async function obterCotacao(codigoMoedas) {
     const url = `https://economia.awesomeapi.com.br/last/${codigoMoedas}`;
 
@@ -341,7 +365,10 @@ function configurarItemH() {
     adicionarEventListener(ID_BTN_RESETAR_H, "click", resetarItemH);
 }
 
-// i)
+/* ------------------------------------------- */
+
+/* ----------------- Item I) ----------------- */
+
 // FUNÇÃO QUE RETORNA ARRAY ASSOCIATIVO
 async function realParaDolarEuroArrayAssossiativo(valorReais) {
     const cotacaoRealParaDolar = await obterCotacao("BRL-USD");
@@ -379,7 +406,9 @@ function configurarItemI() {
     adicionarEventListener(ID_BTN_RESETAR_I, "click", resetarItemI);
 }
 
-// j)
+/* ------------------------------------------- */
+
+/* ----------------- Item J) ----------------- */
 
 function executarItemJ() {
     let mensagem = "Quem canta ";
@@ -397,7 +426,10 @@ function configurarItemJ() {
     adicionarEventListener(ID_BTN_EXECUTAR_J, "click", executarItemJ);
 }
 
-// K)
+/* ------------------------------------------- */
+
+/* ----------------- Item K) ----------------- */
+
 import { converterParaMaiusculas, converterParaMinusculas } from "./itemk.js";
 
 function executarItemK(isMaiusculas) {
@@ -420,6 +452,8 @@ function configurarItemK() {
     adicionarEventListener(ID_BTN_EXECUTAR_K_MAIUSCULAS, "click", executarItemK, true);
     adicionarEventListener(ID_BTN_EXECUTAR_K_MINUSCULAS, "click", executarItemK, false);
 }
+
+/* ------------------------------------------- */
 
 // CONFIGURA TODOS OS BOTÕES
 configurarItens();
