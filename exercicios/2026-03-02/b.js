@@ -1,6 +1,6 @@
 // Implementando 10 métodos de string
 
-let minhaString = "Tudo vale a pena quando a alma não é pequena.";
+var minhaString = "Tudo vale a pena quando a alma não é pequena.";
 
 console.log(minhaString.charAt(10)); // Retorna char na posição 10 ('a')
 console.log(minhaString.concat(" - Fernando Pessoa")); // Retorna string concatenada com outra string
