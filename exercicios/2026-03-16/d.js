@@ -1,16 +1,18 @@
 // Definindo classe Intercambio
-class Intercambio {}
+function Intercambio(pais) {
+    this.pais = pais;
+}
 
 // Definindo protótipo
 Intercambio.prototype = {
-    constructor: function (pais) {
-        this.pais = pais;
-    },
+    constructor: Intercambio,
+
     retornaPais: function () {
         return this.pais;
     },
-    definePais: function (pais) {
-        this.pais = pais;
+
+    definePais: function (novoPais) {
+        this.pais = novoPais;
     },
 };
 
