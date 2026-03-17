@@ -16,3 +16,11 @@ objeto1.hasOwnProperty = function (propriedade) {
 console.log(objeto1.hasOwnProperty("idade")); // "Não..."
 console.log(objeto1.hasOwnProperty("nome")); // "Sim..."
 console.log(objeto1.hasOwnProperty("toString")); // "Sim..."
+
+// Deletando a propriedade própria hasOwnProperty()
+delete objeto1.hasOwnProperty
+
+// Testando o método após deleção
+console.log(objeto1.hasOwnProperty("idade")); // false
+console.log(objeto1.hasOwnProperty("nome")); // true
+console.log(objeto1.hasOwnProperty("toString")); // false
