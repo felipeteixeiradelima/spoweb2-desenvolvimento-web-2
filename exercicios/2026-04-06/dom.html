@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>DOM</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script>
+            function criarElemento(tagName, options, propriedades, innerHTML) {
+                let elemento = document.createElement(tagName, options);
+
+                if ((propriedades !== undefined) & (propriedades !== null)) {
+                    for ([chave, valor] of Object.entries(propriedades)) {
+                        elemento[chave] = valor;
+                    }
+                }
+
+                if ((innerHTML !== undefined) & (innerHTML !== null)) {
+                    elemento.innerHTML = innerHTML;
+                }
+
+                return elemento;
+            }
+
+            let navMenu = criarElemento("nav", { class: "menu" });
+            let listaNaoOrdenada = criarElemento("ul");
+            let elementosA = [
+                criarElemento("a", {}, { href: "index.html" }, "Home"),
+                criarElemento("a", {}, { href: "livros.html" }, "Livros"),
+                criarElemento("a", {}, { href: "autores.html" }, "Autores"),
+            ];
+
+            for (const index in elementosA) {
+                const elementoLi = criarElemento("li");
+                elementoLi.appendChild(elementosA[index]);
+                listaNaoOrdenada.appendChild(elementoLi);
+            }
+
+            navMenu.appendChild(listaNaoOrdenada);
+            document.getElementById("root").appendChild(navMenu);
+        </script>
+    </body>
+</html>
