@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ReactDOM</title>
+        <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"></script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script>
+            let marcacao = React.createElement(
+                "nav",
+                { className: "menu" },
+                React.createElement("ul", null, [
+                    React.createElement(
+                        "li",
+                        null,
+                        React.createElement("a", { href: "index.html" }, "Home")
+                    ),
+                    React.createElement(
+                        "li",
+                        null,
+                        React.createElement(
+                            "a",
+                            { href: "livros.html" },
+                            "Livros"
+                        )
+                    ),
+                    React.createElement(
+                        "li",
+                        null,
+                        React.createElement(
+                            "a",
+                            { href: "autores.html" },
+                            "Autores"
+                        )
+                    ),
+                ])
+            );
+
+            ReactDOM.render(marcacao, document.getElementById("root"));
+        </script>
+    </body>
+</html>
