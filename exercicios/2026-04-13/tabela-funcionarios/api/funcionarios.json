@@ -1,0 +1,32 @@
+[
+  {
+    "cpf": "562.605.890-77",
+    "nome": "Felipe Teixeira de Lima",
+    "cargo": "CEO",
+    "salario": 10000
+  },
+  {
+    "cpf": "155.895.680-80",
+    "nome": "Thiago Galvão Ferreira",
+    "cargo": "Desenvolvedor(a)",
+    "salario": 5000
+  },
+  {
+    "cpf": "027.292.580-27",
+    "nome": "Amanda Jen",
+    "cargo": "Quality Assurance",
+    "salario": 5000
+  },
+  {
+    "cpf": "846.021.710-87",
+    "nome": "Letícia Cardoso Furtado",
+    "cargo": "Engenheiro(a) de Dados",
+    "salario": 5000
+  },
+  {
+    "cpf": "695.520.940-03",
+    "nome": "Ana Maria Fausta Bonfim",
+    "cargo": "Scrum Master",
+    "salario": 5000
+  }
+]
