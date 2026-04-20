@@ -5,7 +5,7 @@ import TabelaBody from "./components/TabelaBody";
 
 class App extends Component {
   state = {
-    livros: [],
+    funcionarios: [],
   };
 
   componentDidMount() {
@@ -15,26 +15,24 @@ class App extends Component {
       .catch((error) => console.error(error));
   }
 
-  handleExcluirLinha(cpf) {
-    const funcionariosMantidos = this.state.funcionarios.filter(
-      (funcionario) => funcionario.cpf !== cpf
-    );
-    this.setState({ funcionariosMantidos });
-  }
+  handleExcluirLinha = (cpf) => {
+    const funcionarios = this.state.funcionarios.filter((funcionario) => funcionario.cpf !== cpf);
+    this.setState({ funcionarios });
+  };
 
-  handleOrdenarCrescente() {
+  handleOrdenarCrescente = () => {
     const funcionariosReordenados = this.state.funcionarios.sort((a, b) =>
-      a.nome < b.nome ? -1 : 0
+      a.nome < b.nome ? -1 : 0,
     );
     this.setState({ funcionariosReordenados });
-  }
+  };
 
-  handleOrdenarDecrescente() {
+  handleOrdenarDecrescente = () => {
     const funcionariosReordenados = this.state.funcionarios.sort((a, b) =>
-      a.nome > b.nome ? -1 : 0
+      a.nome > b.nome ? -1 : 0,
     );
     this.setState({ funcionariosReordenados });
-  }
+  };
 
   render() {
     return (
@@ -43,11 +41,8 @@ class App extends Component {
           ordenarCrescente={this.handleOrdenarCrescente}
           ordenarDecrescente={this.handleOrdenarDecrescente}
         />
-        <TabelaFoot />
-        <TabelaBody
-          funcionarios={this.state.funcionarios}
-          excluirLinha={this.handleExcluirLinha}
-        />
+        <TabelaFoot qtdFuncionarios={this.state.funcionarios.length} />
+        <TabelaBody funcionarios={this.state.funcionarios} excluirLinha={this.handleExcluirLinha} />
       </table>
     );
   }
