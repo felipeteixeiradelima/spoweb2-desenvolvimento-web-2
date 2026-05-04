@@ -2,7 +2,7 @@ import React from "react";
 
 function Home() {
   return (
-    <>
+    <main className="principal">
       <h2>Lançamentos</h2>
       <div className="card">
         <div className="thumb">
@@ -24,7 +24,7 @@ function Home() {
           <a href="#">Leia main</a>
         </div>
       </div>
-    </>
+    </main>
   );
 }
 

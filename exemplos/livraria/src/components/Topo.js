@@ -1,4 +1,6 @@
 import React from "react";
+import Logo from "./Logo";
+import Navegacao from "./Navegacao";
 
 function Topo() {
   return (

@@ -1,22 +1,23 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function Navegacao() {
   return (
     <ul>
       <li>
-        <a href="#">Home</a>
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <a href="#">História</a>
+        <NavLink to="/historia">Historia</NavLink>
       </li>
       <li>
-        <a href="#">Ciência</a>
+        <NavLink to="/ciencia">Ciência</NavLink>
       </li>
       <li>
-        <a href="#">Literatura</a>
+        <NavLink to="/literatura">Literatura</NavLink>
       </li>
       <li>
-        <a href="#">Catálogo</a>
+        <NavLink to="/catalogo">Catálogo</NavLink>
       </li>
     </ul>
   );
